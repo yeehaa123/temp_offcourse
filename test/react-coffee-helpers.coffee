@@ -1,7 +1,6 @@
 helpers = require './react-helpers'
-{ React, TestUtils, fixtures, testdom } = helpers
+{ React, TestUtils, testdom } = helpers
 {div} = React.DOM
-_ = require('lodash')
 
 renderElement = (Component, options) ->
   element = React.createElement Component, options
