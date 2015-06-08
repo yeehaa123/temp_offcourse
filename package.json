@@ -1,0 +1,27 @@
+{
+  "name": "offcourse-frontend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/Unacademic.spec.coffee"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.5.4",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "chai": "^2.3.0",
+    "classnames": "^2.1.2",
+    "coffee-script": "^1.9.3",
+    "lodash": "^3.9.3",
+    "mocha-gwt": "^0.1.13",
+    "mockery": "^1.4.0",
+    "ramda": "^0.14.0",
+    "react": "^0.13.3",
+    "rewire": "^2.3.3",
+    "sandboxed-module": "^2.0.2",
+    "sinon-chai": "^2.7.0"
+  }
+}
