@@ -1,0 +1,44 @@
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: NittyNormal;
+  height: 100%;
+  overflow-y: hidden;
+  background: $lightBaseColor;
+  transition: background-color 0.4s ease;
+}
+
+.layout-sidebar {
+  display: flex;
+  flex-direction: row;
+  min-width: $sidebarWidth;
+  max-width: $sidebarWidth;
+}
+
+.layout-main {
+  flex-direction: column;
+  flex: 1;
+}
+
+.layout-content {
+  display: block;
+  height: auto;
+}
+
+.layout-topbar {
+  display: flex;
+  height: rem-calc(95);
+  justify-content: space-between;
+  flex-direction: row;
+  padding: $baseUnit;
+}
+
+.app-is-introduction.app-is-learn {
+  background-color: $learnColor;
+}
+
+.app-is-introduction.app-is-curate {
+  background-color: $curateColor;
+}
+

@@ -1,0 +1,32 @@
+.sidebar {
+  display: flex;
+  width: 100%;
+  max-width: $sidebarWidth;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: $inverseColor;
+  transition: background-color 0.4s ease;
+}
+
+.app-is-learn.app-is-waypoints .sidebar {
+  background-color: $learnColor;
+}
+.app-is-curate.app-is-waypoints .sidebar {
+  background-color: $curateColor;
+}
+
+.app-is-learn.app-is-introduction .sidebar {
+  background-color: $learnColor;
+}
+
+.app-is-curate.app-is-introduction .sidebar {
+  background-color: $curateColor;
+}
+
+.app-is-learn.app-is-feedback .sidebar {
+  background-color: $learnColor;
+}
+
+.app-is-curate.app-is-feedback .sidebar {
+  background-color: $curateColor;
+}

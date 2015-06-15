@@ -1,0 +1,30 @@
+.btn {
+  font-family: NittyBold;
+  font-size: rem-calc(16);
+  height: $baseUnit * 1.5;
+  width: 100%;
+  background: $inverseColor;
+  padding: rem-calc(10) rem-calc(20);
+  margin-top: $baseUnit / 3;
+  text-decoration: none;
+  border: none;
+
+  &:hover {
+    color: $highlightColor;
+  }
+
+  &:disabled {
+    color: $lightBaseColor;
+    background-color: $betweenBaseColor;
+  }
+
+  &.btn-is-active {
+    background-color: $baseColor;
+    color: $inverseColor;
+  }
+}
+
+.btn.btn-inverse {
+  background: $baseColor;
+  color: $inverseColor;
+}

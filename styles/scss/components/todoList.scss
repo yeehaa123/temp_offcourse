@@ -1,0 +1,105 @@
+.todolist_item, .resource_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $baseUnit / 6;
+  background-color: $lightBaseColor;
+  height: $baseUnit;
+  margin-bottom: $baseUnit / 6;
+  color: $baseColor;
+}
+
+.todolist_item p {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.todolist_item .checkbox {
+  display: inline-block;
+  margin-right: $baseUnit / 3;
+  width: $twoThirdUnit;
+  height: $twoThirdUnit;
+  background-color: $inverseColor;
+  vertical-align: center
+}
+
+.resource_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: auto;
+  padding: $baseUnit / 3;
+  vertical-align: center
+}
+
+.checkbox_container {
+  flex: 2;
+  height: auto;
+}
+
+.app-is-learn .resource_item:hover {
+  background-color: $learnColor;
+  .handle {
+    background-color: $learnColor;
+    .handle_circle {
+      fill: $lightBaseColor;
+    }
+  }
+}
+
+.app-is-curate .resource_item:hover {
+  background-color: $curateColor;
+  .handle {
+    background-color: $curateColor;
+    .handle_circle {
+      fill: $lightBaseColor;
+    }
+  }
+}
+
+.app-is-learn .handle_circle {
+  fill: $learnColor;
+}
+
+.app-is-curate .handle_circle {
+  fill: $curateColor;
+}
+
+.resource_item .handle {
+  display: block;
+  width: $twoThirdUnit;
+  height: $twoThirdUnit;
+  background-color: $lightBaseColor;
+  vertical-align: center;
+  margin: 0;
+
+}
+
+.resource_item .resource_item_title {
+  flex: 20;
+  margin-right: $baseUnit / 3;
+  vertical-align: center
+}
+
+
+.app-is-learn .checkbox-is-complete {
+  background-color: $learnColor;
+  border: rem-calc(2px) solid $inverseColor;
+}
+
+.app-is-curate .checkbox-is-complete {
+  background-color: $curateColor;
+  border: rem-calc(2px) solid $inverseColor;
+}
+
+.app-is-curate .todolist_item-is-highlighted {
+  background-color: $curateColor;
+  color: $inverseColor;
+}
+
+.app-is-learn .todolist_item-is-highlighted {
+  background-color: $learnColor;
+}
