@@ -27,8 +27,10 @@ defmodule Parser do
   defp saveCheckpoint(checkpoint, waypoint_id) do
     checkpoint = Ecto.Changeset.change(checkpoint, waypoint_id: waypoint_id)
     checkpoint = Repo.insert(checkpoint)
-    resources = Enum.map(checkpoint.resources, &create_resource(&1))
-    Enum.map(resources, &saveResource(&1, checkpoint.id))
+    Repo.transaction fn ->
+      resources = Enum.map(checkpoint.resources, &create_resource(&1))
+      Enum.map(resources, &saveResource(&1, checkpoint.id))
+    end
   end
 
   defp saveResource(resource, checkpoint_id) do
@@ -65,6 +67,7 @@ defmodule Parser do
     val = field
     |> extract_value(document)
     |> to_string
+    |> String.strip
     { field, val }
   end
 
