@@ -1,0 +1,15 @@
+{
+  "name": "offcourse-frontend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jan Hein Hoogstad",
+  "license": "MIT",
+  "dependencies": {
+    "offcourse-layout-component": "0.0.4",
+    "react": "^0.13.3"
+  }
+}

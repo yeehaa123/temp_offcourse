@@ -2,30 +2,32 @@
   display: block;
 }
 
-.breadcrumb, .login {
+.layout-topbar .btn {
   display: inline-block;
   font-family: NittyNormal;
   font-weight: 300;
   font-size: rem-calc(22);
   line-height: rem-calc(30);
+  margin-top: 0;
   margin-bottom: rem-calc(5);
+  width: auto;
+  height: auto;
   padding: 0 $thirdUnit;
   color: $baseColor;
   background-color: $inverseColor;
   margin-right: rem-calc(10px);
 }
 
-.breadcrumb.breadcrumb-is-active {
+.layout-topbar .btn:hover {
+  color: $red;
+}
+
+
+.btn.btn-is-active {
   background-color: $baseColor;
   color: $inverseColor;
 }
 
-
-.login.login-is-active {
-  background-color: $baseColor;
-  color: $inverseColor;
-}
-.login:hover {
-  background-color: $baseColor;
+.btn.btn-is-active:hover{
   color: $inverseColor;
 }

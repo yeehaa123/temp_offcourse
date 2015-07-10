@@ -1,15 +1,6 @@
 {
   "name": "offcourse-styles",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "css for offcourse.io",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jan Hein Hoogstad",
-  "license": "MIT",
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.1"
-  }
+  "styles": "index.css"
 }

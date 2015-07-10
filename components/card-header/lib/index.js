@@ -24,21 +24,17 @@ var _classnames2 = require("classnames");
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _lodash = require("lodash");
+var CardHeader = (function (_React$Component) {
+  function CardHeader(props) {
+    _classCallCheck(this, CardHeader);
 
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var CardSectionField = (function (_React$Component) {
-  function CardSectionField(props) {
-    _classCallCheck(this, CardSectionField);
-
-    _get(Object.getPrototypeOf(CardSectionField.prototype), "constructor", this).call(this, props);
-    this.name = "card_field";
+    _get(Object.getPrototypeOf(CardHeader.prototype), "constructor", this).call(this, props);
+    this.name = "card_header";
   }
 
-  _inherits(CardSectionField, _React$Component);
+  _inherits(CardHeader, _React$Component);
 
-  _createClass(CardSectionField, [{
+  _createClass(CardHeader, [{
     key: "classes",
     value: function classes() {
       return (0, _classnames3["default"])(_defineProperty({}, this.name, true));
@@ -46,38 +42,22 @@ var CardSectionField = (function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _props = this.props;
-      var title = _props.title;
-      var field = _props.field;
+      var image = this.props.image;
 
-      if (!title) {
-        return _react2["default"].createElement(
-          "h1",
-          { className: this.classes() },
-          field
-        );
-      }
-      title = title.toLowerCase();
       return _react2["default"].createElement(
-        "p",
+        "section",
         { className: this.classes() },
-        _lodash2["default"].capitalize(title),
-        ": ",
-        field
+        image
       );
-    }
-  }], [{
-    key: "propTypes",
-    value: function propTypes() {
-      return {
-        title: _react2["default"].PropTypes.string,
-        field: _react2["default"].PropTypes.string.isRequired
-      };
     }
   }]);
 
-  return CardSectionField;
+  return CardHeader;
 })(_react2["default"].Component);
 
-exports["default"] = CardSectionField;
+CardHeader.propTypes = {
+  image: _react2["default"].PropTypes.node.isRequired
+};
+
+exports["default"] = CardHeader;
 module.exports = exports["default"];

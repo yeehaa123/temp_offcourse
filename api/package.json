@@ -1,0 +1,18 @@
+{
+  "name": "offcourse-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp-concat-json": "^1.0.0",
+    "gulp-yaml": "^0.2.4"
+  }
+}
