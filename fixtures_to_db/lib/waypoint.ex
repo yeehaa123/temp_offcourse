@@ -3,10 +3,10 @@ defmodule Waypoint do
   use Ecto.Model
 
   schema "waypoints" do
-    field :title
-    field :curator
-    field :summary
-    field :description
+    field :title,          :string
+    field :curator,        :string
+    field :summary,        :string
+    field :description,    :string
     has_many :checkpoints, Checkpoint
     timestamps
   end

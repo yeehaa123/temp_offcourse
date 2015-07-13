@@ -3,8 +3,10 @@ defmodule FixturesToDb.Repo.Migrations.CreateCheckpoint do
 
   def change do
     create table(:checkpoints) do
-      add :title,    :string
-      add :waypoint_id, references(:waypoints)
+      add :title,        :string
+      add :description,  :text
+      add :instructions, {:array, :string}
+      add :waypoint_id,  references(:waypoints)
       timestamps
     end
   end

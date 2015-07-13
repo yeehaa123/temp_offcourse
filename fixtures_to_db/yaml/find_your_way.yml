@@ -1,16 +1,22 @@
-id: 0
 title: Find Your Way
 curator: Reika Chavers
 
 summary: |
     Learn at your best through dwelling. Learn to dwell through Offcourse.
 description: |
-  Dwelling is a matter of having enough freedom to find new paths, but at the same time having enough structure to not get lost. We have minimised the interface design to give you some of that structure so you can keep your focus on learning and curating. The core functionalities are limited to the ones you need: mode button, toolbar and the card stack. That's all!
+  Dwelling is a matter of having enough freedom to find new paths, but at the
+  same time having enough structure to not get lost. We have minimised the
+  interface design to give you some of that structure so you can keep your
+  focus on learning and curating. The core functionalities are limited to the
+  ones you need: mode button, toolbar and the card stack. That's all!
 
 checkpoints:
   - title: Switch Cognitive Modes
     introduction: |
-      Changing your perspective makes your learning more active. Switch between learning and curating to learn more effectively and at the same time help others to learn. Explore switching modes in Offcourse by clicking the mode button (logo) in the upper left corner.
+      Changing your perspective makes your learning more active. Switch between
+      learning and curating to learn more effectively and at the same time help
+      others to learn. Explore switching modes in Offcourse by clicking the mode
+      button (logo) in the upper left corner.
     instructions:
       - Try to define your own modes in life after reading the resources
     resources:

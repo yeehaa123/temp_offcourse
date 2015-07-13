@@ -3,9 +3,9 @@ defmodule FixturesToDb.Repo.Migrations.CreateWaypoint do
 
   def change do
     create table(:waypoints) do
-      add :title,    :string
-      add :curator, :string
-      add :summary, :string
+      add :title,       :string
+      add :curator,     :string
+      add :summary,     :string
       add :description, :text
       timestamps
     end
