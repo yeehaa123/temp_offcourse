@@ -11,10 +11,15 @@ defmodule Parser do
     document
     |> :yamerl_constr.file
     |> hd
+    |> create_waypoint
+    |> save_waypoint
+  end
+  
+  defp create_waypoint(document) do
+    document
     |> get_docs([:curator, :title, :summary, :description, :checkpoints])
     |> Enum.into(%Waypoint{})
     |> Waypoint.changeset
-    |> saveWaypoint
   end
   
   defp create_checkpoint(document) do
@@ -37,31 +42,36 @@ defmodule Parser do
     |> Enum.into(%Criteria{})
     |> Criteria.changeset
   end
-  defp saveWaypoint(waypoint) do
+
+  defp save_waypoint(waypoint) do
     checkpoints = Enum.map(waypoint.checkpoints, &create_checkpoint(&1))
     Repo.transaction fn ->
       waypoint = Repo.insert(waypoint)
-      Enum.map(checkpoints, &saveCheckpoint(&1, waypoint.id))
+      Enum.map(checkpoints, &save_checkpoint(&1, waypoint.id))
     end
   end
 
-  defp saveCheckpoint(checkpoint, waypoint_id) do
+  defp save_checkpoint(checkpoint, waypoint_id) do
     checkpoint = Ecto.Changeset.change(checkpoint, waypoint_id: waypoint_id)
     Repo.transaction fn ->
       checkpoint = Repo.insert(checkpoint)
       resources = Enum.map(checkpoint.resources, &create_resource(&1))
-      Enum.map(resources, &saveResource(&1, checkpoint.id))
+      Enum.map(resources, &save_resource(&1, checkpoint.id))
     end
   end
 
-  defp saveResource(resource, checkpoint_id) do
+  defp save_resource(resource, checkpoint_id) do
     resource = Ecto.Changeset.change(resource, checkpoint_id: checkpoint_id)
     Repo.transaction fn ->
       resource = Repo.insert(resource)
       criteria = create_criteria(resource.criteria) 
-      criteria = Ecto.Changeset.change(criteria, resource_id: resource.id)
-      Repo.insert(criteria)
+      save_criteria(criteria, resource.id)
     end
+  end
+
+  def save_criteria(criteria, resource_id) do
+    criteria = Ecto.Changeset.change(criteria, resource_id: resource_id)
+    Repo.insert(criteria)
   end
 
   defp get_docs(document, fields) do
