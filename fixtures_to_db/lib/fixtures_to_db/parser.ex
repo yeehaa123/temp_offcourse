@@ -41,11 +41,17 @@ defmodule Parser do
     |> get_criteria([:clarity, :difficulty, :up_to_date, :pertinence, :enjoyment])
     |> Enum.into(%Criteria{})
     |> Criteria.changeset
+    |> IO.inspect
   end
 
   defp save_waypoint(waypoint) do
     checkpoints = Enum.map(waypoint.checkpoints, &create_checkpoint(&1))
+    user = %User{}
     Repo.transaction fn ->
+      userId = String.split(waypoint.curator, " ") |> hd
+      user = Ecto.Changeset.change(user, id: userId, full_name: waypoint.curator)
+      waypoint = Ecto.Changeset.change(waypoint, curator: userId)
+      Repo.insert(user)
       waypoint = Repo.insert(waypoint)
       Enum.map(checkpoints, &save_checkpoint(&1, waypoint.id))
     end
